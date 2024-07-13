@@ -74,7 +74,6 @@ async function setup() {
   app.stage.addChild(...components.flatMap((component) => component.sprites));
 
   function startAnimation() {
-    console.log("Starting animation");
     for (const component of components) {
       component.start?.();
     }
