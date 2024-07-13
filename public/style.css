@@ -1,0 +1,100 @@
+* {
+    box-sizing: border-box;
+}
+
+html {
+    height: 100%
+}
+
+body {
+    height: 100%;
+    margin: 0;
+    background-color: #140c3d;
+    display: flex;
+    flex-direction: column;
+}
+
+/* 
+   NOTE: Header animation looks best when header height is either 150px or 500px.
+   Other values will result in animation scaling, which slightly degrades quality
+*/   
+
+header {
+    background: url('/img/header.jpg') no-repeat center;
+    background-size: cover;
+    height: 150px;
+    flex-shrink: 0;
+}
+
+@media (min-width: 640px)  { header { height: 200px } } 
+@media (min-width: 768px)  { header { height: 300px } } 
+@media (min-width: 1280px) { header { height: 500px } } 
+
+main {
+    height: 100%;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+#wheel-root {
+    margin: auto;
+    width: 100%;
+    height: 445px;
+    flex-grow: 0;
+}
+
+@media (orientation: landscape) and (max-height:600px) { 
+    header { display: none;}
+    #wheel-root { height: 100%}
+} 
+
+/** Congratulations dialog **/
+
+#dialog-overlay {
+    background-color: rgba(0,0,0,0.5);
+    font-family: sans-serif;
+    top: 0;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: none;
+    justify-content: center; 
+    align-items: center;
+}
+
+#dialog-overlay h1 {
+    margin: 0;
+}
+
+.card {
+    color:white;
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 24px;
+    max-width: 300px;
+    border-width: 0px;
+    border-radius: 8px;
+}
+
+@media (min-width: 640px)  { .card { max-width: 600px } } 
+
+.card p {
+   font-size: 18px; 
+   line-height: 1.5;
+}
+
+#close-button {
+    font-size: 24px;
+    font-weight: bold;
+    background-color: green;
+    padding: 8px;
+    color: white;
+    cursor: pointer;
+    border-radius: 8px;
+    background: linear-gradient(180deg, rgba(180,225,46,1) 0%, rgba(90,129,13,1) 100%);
+    max-width: 300px;
+}
