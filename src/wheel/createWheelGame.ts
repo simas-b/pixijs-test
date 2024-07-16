@@ -81,12 +81,12 @@ export default async function createWheelGame() {
       enableButton();
     }
 
-    if (position !== undefined) {
-      console.log(
-        `API responded with position ${position}. Wheel will stop at ${regions[position].color} region.`
-      );
-      spin(position);
-    }
+    console.log(
+      `API responded with position ${position}. Wheel will stop at ${
+        regions[position!].color
+      } region.`
+    );
+    spin(position!);
   });
 
   function enableButton() {
@@ -120,7 +120,6 @@ export default async function createWheelGame() {
 
       // Stop the wheel if it has come close enough to desired position
       if (rotationLeft < SAFETY_MARGIN / 2) {
-        wheelSprite.rotation = wheelSprite.rotation %= 2 * PI;
         handleGameEnd(desiredPosition);
         return ticker.destroy();
       }
@@ -128,7 +127,7 @@ export default async function createWheelGame() {
       // Emergency stop if we risk overshooting target
       // This can only happen with very extreme deltaTime
       if (rotationLeft < rotationAmount) {
-        wheelSprite.rotation = desiredPosition;
+        wheelSprite.rotation = desiredRotation;
         handleGameEnd(desiredPosition);
         return ticker.destroy();
       }
