@@ -78,7 +78,7 @@ export default async function createWheelGame() {
       position = (await response.json<{ POSITION: number }>()).POSITION;
     } catch {
       alert("Oops, the wheel is out of order. Please try again later.");
-      enableButton();
+      return enableButton();
     }
 
     console.log(
