@@ -93,7 +93,7 @@ function scaleAndCenter(app: Application, initialStageHeight: number) {
    * So when animation's root HTML container (and subsequently app.screen.height) is 150px with
    * small textures loaded or 500px with big textures loaded Scale will be 1 and animation will look best.
    *
-   * See also loadTextureForScreenSize() in utils.ts and header element properties in index.css for context.
+   * See also loadTextureForScreenSize() and header element properties in index.css for context.
    */
 
   app.stage.scale = app.screen.height / initialStageHeight;
