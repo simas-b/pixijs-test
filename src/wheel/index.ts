@@ -6,7 +6,7 @@ import config from "../config";
 const setupPromise = setup();
 
 window.addEventListener("load", async () => {
-  // Wait for setup to finish if it hasn't yet.
+  // Wait for setup to finish if it hasn't yet
   const { app } = await setupPromise;
 
   const rootElement = document.querySelector(
@@ -34,7 +34,7 @@ window.addEventListener("load", async () => {
     app.stage.alpha += deltaTime / 100;
   });
 
-  setTimeout(() => revealTicker.start(), 0);
+  revealTicker.start();
 });
 
 async function setup() {
