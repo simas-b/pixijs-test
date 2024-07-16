@@ -7,7 +7,7 @@ const { PI } = Math;
 // Safety margin to keep away from zone dividers (radians)
 const SAFETY_MARGIN = 0.1;
 
-// wheel regions and their min/max rotation values
+// Wheel regions and their min/max rotation values
 let regions = [
   { color: "blue", min: 0, max: PI / 2 },
   { color: "green", min: PI / 2, max: PI },
@@ -152,7 +152,7 @@ export default async function createWheelGame() {
         regions[position].color as "blue" | "purple" | "green" | "orange"
       );
     } catch {
-      // fail silently if we unable to get joke from API
+      // Fail silently if we unable to get joke from API
       return;
     } finally {
       enableButton();
